@@ -95,6 +95,9 @@ if ( MSVC )
     # Only enabled in debug because some old versions of VS STL generate
     # unreachable code warning when compiled in release configuration.
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /W4 ")
+
+    # MSVC has incompatible runtimes between debug and release modes.
+    set(CMAKE_DEBUG_POSTFIX "d")
 endif()
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
