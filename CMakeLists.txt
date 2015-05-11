@@ -64,7 +64,7 @@ ENDIF(NOT JSONCPP_VERSION_FOUND)
 MESSAGE(STATUS "JsonCpp Version: ${JSONCPP_VERSION_MAJOR}.${JSONCPP_VERSION_MINOR}.${JSONCPP_VERSION_PATCH}")
 # File version.h is only regenerated on CMake configure step
 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/src/lib_json/version.h.in"
-                "${PROJECT_SOURCE_DIR}/include/json/version.h" )
+                "${PROJECT_SOURCE_DIR}/include/json/version.h" NEWLINE_STYLE LF)
 
 macro(UseCompilationWarningAsError)
 	if ( MSVC )
