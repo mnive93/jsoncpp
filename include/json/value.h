@@ -44,6 +44,10 @@ public:
   virtual char const* what() const throw();
 protected:
   std::string const msg_;
+
+private:
+  // Disable assignment operator, and warning in MSVC2013
+  Exception& operator=(Exception const&);
 };
 
 /** Exceptions which the user cannot easily avoid.
@@ -55,6 +59,10 @@ protected:
 class JSON_API RuntimeError : public Exception {
 public:
   RuntimeError(std::string const& msg);
+
+private:
+  // Disable assignment operator, and warning in MSVC2013
+  RuntimeError& operator=(RuntimeError const&);
 };
 
 /** Exceptions thrown by JSON_ASSERT/JSON_FAIL macros.
@@ -66,6 +74,10 @@ public:
 class JSON_API LogicError : public Exception {
 public:
   LogicError(std::string const& msg);
+
+private:
+  // Disable assignment operator, and warning in MSVC2013
+  LogicError& operator=(LogicError const&);
 };
 
 /// used internally
