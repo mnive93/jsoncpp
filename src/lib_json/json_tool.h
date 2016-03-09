@@ -12,8 +12,15 @@
  * It is an internal header that must not be exposed.
  */
 
+// Note that a C++ standard header must be included before this one (the code
+// below indicates that <string> would logically be included) in order to set
+// macros required to test for libstdc++
+
 #if defined(__GNUC__) && (__GNUC__ >= 6)
 #define JSON_USE_SCOPED_PTR
+#elif defined(__clang__) && defined(__USE_ISOCXX11) && defined(__GLIBCXX__)
+// clang with libstdc++
+#define JSON_USE_UNIQUE_PTR
 #endif
 
 namespace Json {

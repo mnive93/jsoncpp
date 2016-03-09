@@ -45,6 +45,8 @@ namespace Json {
 
 #if defined(JSON_USE_SCOPED_PTR)
 typedef std::scoped_ptr<CharReader> const  CharReaderPtr;
+#elif defined(JSON_USE_UNIQUE_PTR)
+typedef std::unique_ptr<CharReader> const  CharReaderPtr;
 #else
 typedef std::auto_ptr<CharReader>          CharReaderPtr;
 #endif
