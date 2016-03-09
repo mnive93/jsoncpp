@@ -26,15 +26,15 @@ ENDIF()
 SET(DEBUG_LIBNAME_SUFFIX "" CACHE STRING "Optional suffix to append to the library name for a debug build")
 SET(LIB_SUFFIX "" CACHE STRING "Optional arch-dependent suffix for the library installation directory")
 
-SET(RUNTIME_INSTALL_DIR bin
+SET(RUNTIME_INSTALL_DIR ${CMAKE_INSTALL_BINDIR}
     CACHE PATH "Install dir for executables and dlls")
-SET(ARCHIVE_INSTALL_DIR lib${LIB_SUFFIX}
+SET(ARCHIVE_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}
     CACHE PATH "Install dir for static libraries")
-SET(LIBRARY_INSTALL_DIR lib${LIB_SUFFIX}
+SET(LIBRARY_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}
     CACHE PATH "Install dir for shared libraries")
-SET(INCLUDE_INSTALL_DIR include/jsoncpp
+SET(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_INCLUDEDIR}/jsoncpp
     CACHE PATH "Install dir for headers")
-SET(PACKAGE_INSTALL_DIR lib${LIB_SUFFIX}/cmake
+SET(PACKAGE_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}/cmake
     CACHE PATH "Install dir for cmake package config files")
 MARK_AS_ADVANCED( RUNTIME_INSTALL_DIR ARCHIVE_INSTALL_DIR INCLUDE_INSTALL_DIR PACKAGE_INSTALL_DIR )
 
