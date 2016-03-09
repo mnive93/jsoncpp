@@ -12,6 +12,10 @@
  * It is an internal header that must not be exposed.
  */
 
+#if defined(__GNUC__) && (__GNUC__ >= 6)
+#define JSON_USE_SCOPED_PTR
+#endif
+
 namespace Json {
 
 /// Converts a unicode code-point to UTF-8.

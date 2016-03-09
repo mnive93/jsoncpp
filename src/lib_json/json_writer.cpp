@@ -54,7 +54,7 @@
 
 namespace Json {
 
-#if __GNUC__ >= 6
+#if defined(JSON_USE_SCOPED_PTR)
 typedef std::scoped_ptr<StreamWriter> const  StreamWriterPtr;
 #else
 typedef std::auto_ptr<StreamWriter>          StreamWriterPtr;
