@@ -21,6 +21,9 @@
 #elif defined(__clang__) && defined(__USE_ISOCXX11) && defined(__GLIBCXX__)
 // clang with libstdc++
 #define JSON_USE_UNIQUE_PTR
+#elif defined(__ANDROID__)
+// android with libstdc++ or libc++
+#define JSON_USE_UNIQUE_PTR
 #endif
 
 namespace Json {
