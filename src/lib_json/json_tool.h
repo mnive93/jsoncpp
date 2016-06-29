@@ -21,8 +21,8 @@
 #elif defined(__clang__) && defined(__USE_ISOCXX11) && defined(__GLIBCXX__)
 // clang with libstdc++
 #define JSON_USE_UNIQUE_PTR
-#elif defined(__ANDROID__)
-// android with libstdc++ or libc++
+#elif defined(__ANDROID__) && __cplusplus > 199711L
+// android with libstdc++ or libc++ in a C++11ish mode
 #define JSON_USE_UNIQUE_PTR
 #endif
 
